@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌍 Usuarios en Tiempo Real</title>
-
-  <!-- Estilos -->
+  <title>Usuarios en Tiempo Real 🌎</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <!-- Firebase SDK -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"></script>
 </head>
+
 <body>
   <header>
-    <h1>🌐 Usuarios en Tiempo Real</h1>
+    <h1>🛰️ Usuarios en Tiempo Real</h1>
     <p>Visualiza la ubicación de todos los usuarios conectados</p>
   </header>
+
+  <section id="controls">
+    <button id="renameUser">✏️ Renombrar Usuario</button>
+    <button id="recenterMap">📍 Centrar Mapa</button>
+    <span id="status">🔄 Conectando...</span>
+  </section>
 
   <div id="map"></div>
 
   <footer>
-    <p>Desarrollado por <b>Jean Alexander Arosquipa Ccama</b> 🌍</p>
+    <p>Desarrollado por <strong>Jean Alexander Arosquipa Ccama</strong> 🌐</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script principal -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>

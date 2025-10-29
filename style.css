@@ -1,46 +1,79 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
+/* ===== Estilo General ===== */
 body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0e0e0e;
+  color: #e0e0e0;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #0f0f0f;
-  color: white;
 }
 
+/* ===== Encabezado ===== */
 header {
-  background: #181818;
   text-align: center;
-  padding: 15px;
-  border-bottom: 2px solid #00ffc8;
+  background: #1c1c1c;
+  padding: 15px 10px;
+  border-bottom: 2px solid #00ffff55;
+  box-shadow: 0 2px 8px #00ffff33;
 }
 
 header h1 {
-  color: #00ffc8;
+  color: #00ffe0;
+  margin: 5px 0;
   font-size: 1.8rem;
 }
 
 header p {
-  color: #ccc;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* ===== Controles ===== */
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: #111;
+  border-bottom: 1px solid #222;
+}
+
+button {
+  background: #00ffe0;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00ffe055;
+}
+
+button:hover {
+  background: #00d1b2;
+  box-shadow: 0 0 20px #00ffe0aa;
+}
+
+#status {
+  color: #00ffe0;
   font-size: 0.9rem;
 }
 
+/* ===== Mapa ===== */
 #map {
   flex: 1;
   width: 100%;
-  height: calc(100vh - 120px); /* deja espacio para header y footer */
 }
 
+/* ===== Footer ===== */
 footer {
-  background: #181818;
   text-align: center;
-  padding: 10px;
-  color: #aaa;
+  background: #1c1c1c;
+  padding: 8px;
+  color: #888;
   font-size: 0.85rem;
-  border-top: 1px solid #00ffc8;
+  border-top: 1px solid #222;
 }
