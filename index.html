@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usuarios en Tiempo Real 🌎</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌 Mapa Futurista en Tiempo Real</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/854/854878.png" />
 
-  <!-- Leaflet Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Firebase SDK -->
-  <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"></script>
+  <!-- Leaflet Draw -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+
+  <!-- Partículas -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <!-- Script (módulo) -->
+  <script type="module" src="script.js" defer></script>
 </head>
 
 <body>
+  <div id="particles-js"></div>
+
   <header>
-    <h1>🛰️ Usuarios en Tiempo Real</h1>
-    <p>Visualiza la ubicación de todos los usuarios conectados</p>
+    <h1>🌐 Mapa Interactivo en Tiempo Real</h1>
+    <div class="user-controls">
+      <input id="username" type="text" placeholder="Tu nombre (ej. Jean)" />
+      <button id="setName">💾 Guardar</button>
+      <button id="toggleMsgMode">💬 Activar Mensajes</button>
+      <button id="clearMessages">🗑️ Limpiar</button>
+      <button id="centerMe">📍 Centrar</button>
+      <button id="viewAll">🌎 Vista Global</button>
+      <button id="toggleTheme">🌙 Tema</button>
+    </div>
   </header>
 
-  <section id="controls">
-    <button id="renameUser">✏️ Renombrar Usuario</button>
-    <button id="recenterMap">📍 Centrar Mapa</button>
-    <span id="status">🔄 Conectando...</span>
-  </section>
+  <div id="sidebar">
+    <h2>🧭 Leyenda</h2>
+    <ul>
+      <li><span class="dot self"></span> <b>Tú</b></li>
+      <li><span class="dot others"></span> <b>Otros usuarios</b></li>
+      <li><span class="dot msg"></span> <b>Mensajes</b></li>
+      <li><span class="dot draw"></span> <b>Trazos / Figuras</b></li>
+    </ul>
+    <hr />
+    <p>💬 Activa el modo de mensajes para dejar notas. Usa las herramientas de dibujo para marcar zonas.</p>
+  </div>
+
+  <!-- PANEL: Coordenadas en tiempo real -->
+  <div id="coords-panel">
+    <h2>📍 Coordenadas</h2>
+    <ul id="coords-list"></ul>
+  </div>
 
   <div id="map"></div>
 
   <footer>
-    <p>Desarrollado por <strong>Jean Alexander Arosquipa Ccama</strong> 🌐</p>
+    <p>⚡ Proyecto global con Firebase y Leaflet.Draw | Diseño futurista 🌌</p>
   </footer>
-
-  <!-- Script principal -->
-  <script type="module" src="script.js"></script>
 </body>
 </html>
